@@ -250,19 +250,6 @@ def deletarProduto(conbd, nome_produto):
     finally:
         conbd.close()
 
-def realizarPedido(conbd, id_cliente, id_funcionario, data_pedido, valor_total):
-    try:
-        with conbd.cursor() as cursor:
-            sql = 'INSERT INTO pedidos (ID_Cliente, DataPedido, Total) VALUES (%s, %s, %s)'
-            cursor.execute(sql, id_cliente, data_pedido, valor_total)
-        conbd.commit()
-        print("\nPedido realizado com sucesso")
-    except Error as e:
-        conbd.rollback()
-        print(f"Ocorreu um erro ao realizar o pedido: {e}")
-    finally:
-        conbd.close()
-
 def cadastrarPedido(conbd, dataPedido, ID_Cliente, Total, ID_Produto, Quantidade, metodoPagamento):
     mycursor = conbd.cursor()
     sql = 'INSERT INTO pedidos(Data_Pedido, ID_Cliente, Total) VALUES (%s, %s, %s)'
@@ -296,4 +283,3 @@ def consultaEstoqueProduto(conbd, ID_produto):
     estoque = mycursor.fetchall()[0]
     mycursor.close()
     return estoque
-    
