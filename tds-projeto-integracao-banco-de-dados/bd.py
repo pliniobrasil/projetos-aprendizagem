@@ -265,8 +265,6 @@ def cadastrarPedido(conbd, dataPedido, ID_Cliente, Total, ID_Produto, Quantidade
     novoEstoque = consultaEstoqueProduto(conbd, ID_Produto)
     calcEstoque = novoEstoque
     calcEstoque = calcEstoque[0]
-    print('----->', calcEstoque)
-    #calcEstoque = int(calcEstoque[0])
     calcEstoque = calcEstoque - Quantidade
     sql4 = 'UPDATE estoque SET Quantidade = %s WHERE ID_Produto = %s'
     valores4 = (calcEstoque, ID_Produto)

@@ -41,13 +41,13 @@ while True:
             cadastrarProdutos(conbd, nomeproduto, descricaoproduto, precoproduto, quantEstoque, categoriaProduto, fornecedor)
 
         elif escolha == 2:
-            nomeCategoriaProduto = str(input('Digite o nome da nova categoria de produtos: '))
+            nomeCategoriaProduto = str(input('\nDigite o nome da nova categoria de produtos: '))
             descricaoCategoriaProduto = str(input('Digite a descrição da categoria do produto: '))
             
             cadastrarCategoriasProdutos(conbd, nomeCategoriaProduto, descricaoCategoriaProduto)
 
         elif escolha == 3:
-            nomecliente = str(input('Digite o nome do cliente: '))
+            nomecliente = str(input('\nDigite o nome do cliente: '))
             sobrenomecliente = str(input('Digite o sobrenome do cliente: '))
             enderecocliente = str(input('Digite o endereço do cliente: '))
             cidadecliente = str(input('Digite a cidade do cliente: '))
@@ -56,21 +56,21 @@ while True:
             cadastrarClientes(conbd, nomecliente, sobrenomecliente, enderecocliente, cidadecliente, codigopostalcliente)
 
         elif escolha == 4:
-            nomefornecedor = str(input('Digite o nome do fornecedor: '))
+            nomefornecedor = str(input('\nDigite o nome do fornecedor: '))
             contatofornecedor = str(input('Digite o contato do fornecedor: '))
             enderecofornecedor = str(input('Digite o endereço do fornecedor: '))
 
             cadastrarFornecedores(conbd, nomefornecedor, contatofornecedor, enderecofornecedor)
 
         elif escolha == 5:
-            nomefuncionario = str(input('Digite o nome do funcionário: '))
+            nomefuncionario = str(input('\nDigite o nome do funcionário: '))
             cargofuncionario = str(input('Digite o cargo do funcionário: '))
             departamentofuncionario = str(input('Digite o departamento do funcionário: '))
 
             cadastrarFuncionarios(conbd, nomefuncionario, cargofuncionario, departamentofuncionario)
 
         elif escolha == 6:
-            nomepromocao = str(input('Digite o nome da promoção: '))
+            nomepromocao = str(input('\nDigite o nome da promoção: '))
             descricaopromocao = str(input('Digite a descrição da promoção: '))
             datainiciopromocao = input('Digite a data de início da promoção [DD-MM-YYYY]: ')
             datainiciopromocao = datetime.strptime(datainiciopromocao, "%d-%m-%Y").strftime("%Y-%m-%d")
@@ -108,13 +108,13 @@ while True:
     elif opcao == 2:
         subescolha = int(input('\n1. Atualizar Produto\n2. Atualizar Cliente\n3. Atualizar Fornecedor\n4. Atualizar Funcionário\n5. Atualizar Promoção \n6. Sair \nOpção: '))
         if subescolha == 1:
-            nomeproduto = str(input('Qual produto deseja atualizar o preço: '))
+            nomeproduto = str(input('\nQual produto deseja atualizar o preço: '))
             precoproduto = float(input('Qual o novo valor do produto: '))
                         
             atualizarProduto(conbd, precoproduto, nomeproduto)
         
         elif subescolha == 2:
-            codigocliente = str(input('Digite o código do cliente que deseja atualizar: '))
+            codigocliente = str(input('\nDigite o código do cliente que deseja atualizar: '))
             enderecocliente = str(input('Digite o novo endereço: '))
             cidadecliente = str(input('Digite a cidade: '))
             codigopostalcliente = str(input('Digite o código postal: '))
@@ -122,7 +122,7 @@ while True:
             atualizarCliente(conbd, enderecocliente, cidadecliente, codigopostalcliente, codigocliente)
 
         elif subescolha == 3:
-            idfornecedor = str(input('Digite o código do fornecedor que deseja atualizar: '))
+            idfornecedor = str(input('\nDigite o código do fornecedor que deseja atualizar: '))
             nomefornecedor = str(input('Digite o nome do fornecedor: '))
             contatofornecedor = str(input('Digite o email do fornecedor: '))
             enderecofornecedor = str(input('Digite o endereço do fornecedor: '))
@@ -130,14 +130,14 @@ while True:
             atualizarFornecedor(conbd, nomefornecedor, contatofornecedor, enderecofornecedor, idfornecedor)
 
         elif subescolha == 4:
-            nomefuncionario = str(input('Digite o nome do funcionário que deseja atualizar: '))
+            nomefuncionario = str(input('\nDigite o nome do funcionário que deseja atualizar: '))
             cargofuncionario = str(input('Digite o cargo do funcionário: '))
             departamentofuncionario = str(input('Digite o departamento do funcionário: '))
             
             atualizarFuncionario(conbd, cargofuncionario, departamentofuncionario, nomefuncionario)
         
         elif subescolha == 5:
-            nomepromocao = str(input('Qual promoção que deseja alterar: '))
+            nomepromocao = str(input('\nQual promoção que deseja alterar: '))
             descricaopromocao = str(input('Digite a descrição da promoção: '))
             datainiciopromocao = input('Digite a data de início da promoção [DD-MM-YYYY]: ')
             datainiciopromocao = datetime.strptime(datainiciopromocao, "%d-%m-%Y").strftime("%Y-%m-%d")
@@ -156,23 +156,23 @@ while True:
             deletarProduto(conbd, nomeproduto)
             
         elif subescolha == 2:
-            nomecliente = str(input('Qual nome do cliente que deseja excluir: '))
+            nomecliente = str(input('\nQual nome do cliente que deseja excluir: '))
             sobrenomecliente = str(input('Qual sobrenome do cliente que deseja excluir: '))
 
             excluirCliente(conbd, nomecliente, sobrenomecliente)
 
         elif subescolha == 3:
-            nomefornecedor = str(input('Qual fornecedor deseja excluir: '))
+            nomefornecedor = str(input('\nQual fornecedor deseja excluir: '))
 
             excluirFornecedor(conbd, nomefornecedor)
 
         elif subescolha == 4:
-            nomefuncionario = str(input('Qual funcionário deseja excluir: '))
+            nomefuncionario = str(input('\nQual funcionário deseja excluir: '))
 
             excluirFuncionario(conbd, nomefuncionario)
 
         elif subescolha == 5:
-            nomepromocao = str(input('Qual promoção deseja excluir: '))
+            nomepromocao = str(input('\nQual promoção deseja excluir: '))
 
             excluirPromocao(conbd, nomepromocao)
 
@@ -182,22 +182,34 @@ while True:
     elif opcao == 4:
         subescolha = int(input('\n1. Listar Produtos\n2. Listar Categorias de Produtos\n3. Listar Clientes\n4. Listar Fornecedores\n5. Listar Funcionários\n6. Listar Promoções \n7. Sair \nOpção: '))
         if subescolha == 1:
+            print('')
             listarProdutos(conbd)
+            print('')
         
         elif subescolha == 2:
+            print('')
             listarCategoriasProdutos(conbd)
+            print('')
 
         elif subescolha == 3:
+            print('')
             listarClientes(conbd)
+            print('')
 
         elif subescolha == 4:
+            print('')
             listarFornecedores(conbd)
+            print('')
 
         elif subescolha == 5:
+            print('')
             listarFuncionarios(conbd)
+            print('')
 
         elif subescolha == 6:
+            print('')
             listarPromocoes(conbd)
+            print('')
 
         elif subescolha == 7:
             break
